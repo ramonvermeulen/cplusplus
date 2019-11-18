@@ -2,17 +2,19 @@
 #define _BALL_HPP
 
 #include <SFML/Graphics.hpp>
+#include "shape.hpp"
 
-class ball {
+class ball: public shape {
   private:
     sf::Vector2f position;
+    sf::Color color;
     float size;
-  
-  public: // Wat doet diet & teken? Ik zou logischerwijs const sf::Vector2f position denken
-    ball(const sf::Vector2f & position, float size = 30.0);
-    void draw(sf::RenderWindow & window) const;
-    void move(const sf::Vector2f & delta);
-    void jump(const sf::Vector2f & target);
+    int direction;
+    int speed;
+  public:
+    ball(const sf::Vector2f & start_position, const sf::Color & color, float size = 30.0, int direction = 145, int speed = 5);
+    void draw(sf::RenderWindow & window) override;
+    sf::Vector2f calculate_next_position();
 };
 
 #endif

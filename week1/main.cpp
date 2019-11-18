@@ -1,50 +1,43 @@
 #include <SFML/Graphics.hpp>
+#include <list>
+
+#include "square.hpp"
+#include "wall.hpp"
+#include "shape.hpp"
 #include "ball.hpp"
 
-sf::Vector2f Vector2i_to_Vector2f(const sf::Vector2i & target) {
-    return sf::Vector2f(
-        static_cast<float>(target.x),
-        static_cast<float>(target.y)
-    );
-}
-
-void handle_event(sf::RenderWindow & window, ball & my_ball) {
-    sf::Event event;
-
-    if(sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
-        my_ball.move(sf::Vector2f{ -2.5, 0 });
-    }
-    if(sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) {
-        my_ball.move(sf::Vector2f{ +2.5, 0 });
-    }
-    if(sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {
-        my_ball.move(sf::Vector2f{ 0, -2.5 });
-    }
-    if(sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) {
-        my_ball.move(sf::Vector2f{ 0, +2.5 });                
-    }
-    if(sf::Mouse::isButtonPressed(sf::Mouse::Left)){
-        my_ball.jump(Vector2i_to_Vector2f(sf::Mouse::getPosition(window)));
-    }
-    
-    while(window.pollEvent(event)) {
-        if(event.type == sf::Event::Closed) {
-            window.close();
-        }
-    }
-}
+const int SCREEN_HEIGHT = 480.0;
+const int SCREEN_WIDTH = 640.0;
+const int WALL_SIZE = 10.0;
 
 int main()
 {
-    sf::RenderWindow window{ sf::VideoMode{ 640, 480 }, "SFML window"};
-    ball my_ball{ sf::Vector2f{ 320.0, 240.0 }, 5.0 };
+    sf::RenderWindow window{ sf::VideoMode{ SCREEN_WIDTH, SCREEN_HEIGHT }, "Muren en stuiteren", sf::Style::Titlebar | sf::Style::Close};
+    square square{ sf::Vector2f{ SCREEN_WIDTH / 2, (SCREEN_HEIGHT / 4 * 3) }, 20.0 };
+    wall top_wall { sf::Vector2f{ 0.0, 0.0 }, SCREEN_WIDTH, WALL_SIZE, sf::Color::Green };
+    wall right_wall { sf::Vector2f{ SCREEN_WIDTH - WALL_SIZE, 0.0 }, WALL_SIZE, SCREEN_HEIGHT, sf::Color::Green };
+    wall bottom_wall { sf::Vector2f{ 0.0, SCREEN_HEIGHT - WALL_SIZE }, SCREEN_WIDTH, WALL_SIZE, sf::Color::Green };
+    wall left_wall { sf::Vector2f{ 0.0, 0.0 }, WALL_SIZE, SCREEN_WIDTH, sf::Color::Green };
+    ball ball { sf::Vector2f{ SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2 }, sf::Color::Yellow, 10.0, 325, 5 };
 
-    while( window.isOpen() ) {
-        handle_event(window, my_ball);
+    while(window.isOpen()) {
+        sf::Event event;
+        square.handle_input(window);
 
         window.clear();
-        my_ball.draw(window);
+        square.draw(window);
+        ball.draw(window);
+        top_wall.draw(window);
+        right_wall.draw(window);
+        bottom_wall.draw(window);
+        left_wall.draw(window);
         window.display();
+        
+        while(window.pollEvent(event)) {
+            if(event.type == sf::Event::Closed) {
+                window.close();
+            }
+        }
 
         sf::sleep(sf::milliseconds(20));
     }

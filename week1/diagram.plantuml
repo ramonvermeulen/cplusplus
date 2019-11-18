@@ -1,0 +1,30 @@
+@startuml
+
+class Shape {
+  - sf::Color color;
+  - sf::Vector2f position;
+  - sf::Vector2f size;
+  + virtual void draw()
+}
+
+class Square {
+  + void handle_input(sf::Window & window)
+  + void draw()
+}
+
+class Ball {
+  - float size
+  - int direction
+  - int speed
+  + void draw()
+}
+
+class Wall {
+  + void draw()
+}
+
+Shape <|-- Square
+Shape <|-- Ball
+Shape <|-- Wall
+
+@enduml
