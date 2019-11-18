@@ -15,6 +15,7 @@ class ball: public shape {
     ball(const sf::Vector2f & start_position, const sf::Color & color, float size = 30.0, int direction = 145, int speed = 5);
     void draw(sf::RenderWindow & window) override;
     sf::Vector2f calculate_next_position();
+    float calculate_acceleration_factor(int base_corner_degrees);
 };
 
 #endif

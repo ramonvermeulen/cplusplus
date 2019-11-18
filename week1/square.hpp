@@ -12,7 +12,7 @@ class square: public shape {
   
   public:
     square(const sf::Vector2f & position, float size = 30.0);
-    void draw(sf::RenderWindow & window);
+    void draw(sf::RenderWindow & window) override;
     void move(const sf::Vector2f & delta);
     void jump(const sf::Vector2f & target);
     void jump(const sf::Vector2i & target);

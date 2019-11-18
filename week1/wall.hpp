@@ -11,7 +11,7 @@ class wall: public shape {
     sf::Color color;
   public:
     wall(const sf::Vector2f & position, const int & width, const int & height, const sf::Color & color);
-    void draw(sf::RenderWindow & window);
+    void draw(sf::RenderWindow & window) override;
 };
 
 #endif

@@ -14,11 +14,11 @@ int main()
 {
     sf::RenderWindow window{ sf::VideoMode{ SCREEN_WIDTH, SCREEN_HEIGHT }, "Muren en stuiteren", sf::Style::Titlebar | sf::Style::Close};
     square square{ sf::Vector2f{ SCREEN_WIDTH / 2, (SCREEN_HEIGHT / 4 * 3) }, 20.0 };
-    wall top_wall { sf::Vector2f{ 0.0, 0.0 }, SCREEN_WIDTH, WALL_SIZE, sf::Color::Green };
+    wall top_wall { sf::Vector2f{ 0.0, 0.0 }, SCREEN_WIDTH, WALL_SIZE, sf::Color::Green };    
     wall right_wall { sf::Vector2f{ SCREEN_WIDTH - WALL_SIZE, 0.0 }, WALL_SIZE, SCREEN_HEIGHT, sf::Color::Green };
     wall bottom_wall { sf::Vector2f{ 0.0, SCREEN_HEIGHT - WALL_SIZE }, SCREEN_WIDTH, WALL_SIZE, sf::Color::Green };
     wall left_wall { sf::Vector2f{ 0.0, 0.0 }, WALL_SIZE, SCREEN_WIDTH, sf::Color::Green };
-    ball ball { sf::Vector2f{ SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2 }, sf::Color::Yellow, 10.0, 325, 5 };
+    ball ball { sf::Vector2f{ SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2 }, sf::Color::Yellow, 10.0, 45, 2 };
 
     while(window.isOpen()) {
         sf::Event event;
