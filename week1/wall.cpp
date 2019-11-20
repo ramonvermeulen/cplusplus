@@ -1,16 +1,13 @@
 #include <SFML/Graphics.hpp>
 #include "wall.hpp"
 
-Wall::Wall(const sf::Vector2f & position, const int & width, const int & height, const sf::Color & color):
-  position{ position },
-  size{ (float) width, (float) height },
-  color { color }
-{}
+Wall::Wall(const sf::Vector2f position, const float width, const float height, const sf::Color & color)
+  : Shape( position, sf::Vector2f{ width, height }, color, new sf::RectangleShape )
+{ }
 
 void Wall::draw(sf::RenderWindow & window) {
-  sf::RectangleShape wall;
-  wall.setFillColor(color);
-  wall.setSize(size);
-  wall.setPosition(position);
-  window.draw(wall);
+  static_cast<sf::RectangleShape*>(body) -> setFillColor(color);
+  static_cast<sf::RectangleShape*>(body) -> setSize(size);
+  static_cast<sf::RectangleShape*>(body) -> setPosition(position);
+  window.draw(*body);
 }

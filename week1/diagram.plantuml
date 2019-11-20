@@ -1,9 +1,10 @@
 @startuml walls_and_bouncing
 
 class Shape {
-  - sf::Color color;
-  - sf::Vector2f position;
-  - sf::Vector2f size;
+  # sf::Color color;
+  # sf::Vector2f position;
+  # sf::Vector2f size;
+  # sf::Shape * body;
   + virtual void draw()
 }
 
@@ -28,6 +29,10 @@ class Ball {
 
 class Wall {
   + void draw() override
+}
+
+class Collider {
+
 }
 
 Shape <|-- Square

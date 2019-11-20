@@ -5,12 +5,8 @@
 #include "shape.hpp"
 
 class Wall: public Shape {
-  private:
-    sf::Vector2f position;
-    sf::Vector2f size;
-    sf::Color color;
   public:
-    Wall(const sf::Vector2f & position, const int & width, const int & height, const sf::Color & color);
+    Wall(const sf::Vector2f position, const float width, const float height, const sf::Color & color);
     void draw(sf::RenderWindow & window) override;
 };
 

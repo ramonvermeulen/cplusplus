@@ -1,11 +1,9 @@
 #include <SFML/Graphics.hpp>
 #include "square.hpp"
 
-Square::Square(const sf::Vector2f & position, float size, sf::Color color):
-  position{ position },
-  size{ size, size },
-  color{ color }
-{}
+Square::Square(const sf::Vector2f & position, float size, sf::Color color)
+  : Shape(position, sf::Vector2f{ size, size },  color, new sf::RectangleShape)
+{ }
 
 sf::Vector2f Square::Vector2i_to_Vector2f(const sf::Vector2i & target) {
     return sf::Vector2f(
@@ -33,10 +31,9 @@ void Square::handle_input(const sf::Window & window) {
 }
 
 void Square::draw(sf::RenderWindow & window) {
-  sf::RectangleShape square;
-  square.setSize(size);
-  square.setPosition(position);
-  window.draw(square);
+  static_cast<sf::RectangleShape*>(body) -> setSize(size);
+  static_cast<sf::RectangleShape*>(body) -> setPosition(position);
+  window.draw(*body);
 }
 
 void Square::jump(const sf::Vector2f & target) {
