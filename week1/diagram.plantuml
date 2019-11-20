@@ -1,4 +1,4 @@
-@startuml
+@startuml walls_and_bouncing
 
 class Shape {
   - sf::Color color;
@@ -8,19 +8,26 @@ class Shape {
 }
 
 class Square {
-  + void handle_input(sf::Window & window)
-  + void draw()
+  + void draw() override
+  + void handle_input(const sf::Window & window);
+  - sf::Vector2f Vector2i_to_Vector2f(const sf::Vector2i & target);
+  - void move(const sf::Vector2f & delta);
+  - void jump(const sf::Vector2f & target);
+  - void jump(const sf::Vector2i & target);
 }
 
 class Ball {
   - float size
-  - int direction
-  - int speed
-  + void draw()
+  - float direction
+  - float velocity
+  - float move_x
+  - float move_y
+  + void draw() override
+  - sf::Vector2f calculate_next_position()
 }
 
 class Wall {
-  + void draw()
+  + void draw() override
 }
 
 Shape <|-- Square

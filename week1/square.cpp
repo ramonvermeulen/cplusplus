@@ -1,19 +1,20 @@
 #include <SFML/Graphics.hpp>
 #include "square.hpp"
 
-square::square(const sf::Vector2f & position, float size):
+Square::Square(const sf::Vector2f & position, float size, sf::Color color):
   position{ position },
-  size{ size, size }
+  size{ size, size },
+  color{ color }
 {}
 
-sf::Vector2f square::Vector2i_to_Vector2f(const sf::Vector2i & target) {
+sf::Vector2f Square::Vector2i_to_Vector2f(const sf::Vector2i & target) {
     return sf::Vector2f(
         static_cast<float>(target.x),
         static_cast<float>(target.y)
     );
 }
 
-void square::handle_input(const sf::Window & window) {
+void Square::handle_input(const sf::Window & window) {
     if(sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
         move(sf::Vector2f{ -2.5, 0 });
     }
@@ -31,21 +32,21 @@ void square::handle_input(const sf::Window & window) {
     }
 }
 
-void square::draw(sf::RenderWindow & window) {
+void Square::draw(sf::RenderWindow & window) {
   sf::RectangleShape square;
   square.setSize(size);
   square.setPosition(position);
   window.draw(square);
 }
 
-void square::jump(const sf::Vector2f & target) {
+void Square::jump(const sf::Vector2f & target) {
   position = target;
 }
 
-void square::jump(const sf::Vector2i & target) {
+void Square::jump(const sf::Vector2i & target) {
   jump(Vector2i_to_Vector2f(target));
 }
 
-void square::move(const sf::Vector2f & delta) {
+void Square::move(const sf::Vector2f & delta) {
   position += delta;
 }

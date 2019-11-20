@@ -4,18 +4,19 @@
 #include <SFML/Graphics.hpp>
 #include "shape.hpp"
 
-class ball: public shape {
+class Ball: public Shape {
   private:
     sf::Vector2f position;
     sf::Color color;
     float size;
-    int direction;
-    int speed;
-  public:
-    ball(const sf::Vector2f & start_position, const sf::Color & color, float size = 30.0, int direction = 145, int speed = 5);
-    void draw(sf::RenderWindow & window) override;
+    float direction;
+    float velocity;
+    float move_x;
+    float move_y;
     sf::Vector2f calculate_next_position();
-    float calculate_acceleration_factor(int base_corner_degrees);
+  public:
+    Ball(const sf::Vector2f & start_position, const sf::Color & color, float size = 30.0, float direction = 145, float velocity = 5);
+    void draw(sf::RenderWindow & window) override;
 };
 
 #endif

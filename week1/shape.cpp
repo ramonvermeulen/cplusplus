@@ -1,9 +1,9 @@
 #include "shape.hpp"
 
-shape::shape() {
+Shape::Shape() {
 
 }
 
-void shape::draw(sf::RenderWindow & window) {
+void Shape::draw(sf::RenderWindow & window) {
   
 }
