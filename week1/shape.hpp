@@ -8,10 +8,11 @@ class Shape {
     sf::Color color;
     sf::Vector2f position;
     sf::Vector2f size;
-    sf::Shape * body;
   public:
+    sf::Shape * body;
     Shape(const sf::Vector2f position, sf::Vector2f size, sf::Color color, sf::Shape * body);
     virtual void draw(sf::RenderWindow & window) = 0;
+    sf::Vector2f getSize();
 };
 
 #endif

@@ -11,7 +11,7 @@ class Square: public Shape {
     void jump(const sf::Vector2f & target);
     void jump(const sf::Vector2i & target);
   public:
-    Square(const sf::Vector2f & position, float size = 30.0, sf::Color color = sf::Color::White);
+    Square(const sf::Vector2f & position, float size, sf::Color color = sf::Color::White);
     void draw(sf::RenderWindow & window) override;
     void handle_input(const sf::Window & window);
 };

@@ -32,11 +32,16 @@ class Wall {
 }
 
 class Collider {
+  - sf::Shape body
+}
+
+class sf::Shape {
 
 }
 
 Shape <|-- Square
 Shape <|-- Ball
 Shape <|-- Wall
-
+sf::Shape --o Shape
+Collider --o Ball
 @enduml
