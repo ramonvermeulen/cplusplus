@@ -18,12 +18,14 @@ class Square {
 }
 
 class Ball {
-  - float size
+  - float radius
   - float direction
   - float velocity
   - float move_x
   - float move_y
   + void draw() override
+  + void invert_move_x(float intersect_x);
+  + void invert_move_y(float intersect_y);
   - sf::Vector2f calculate_next_position()
 }
 
@@ -33,6 +35,7 @@ class Wall {
 
 class Collider {
   - sf::Shape body
+  + std::pair<bool, sf::Vector2f> is_colliding(Shape * other);
 }
 
 class sf::Shape {

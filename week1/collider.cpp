@@ -3,13 +3,11 @@
 #include "shape.hpp"
 #include <iostream>
 
-enum intersect_angle { UP, RIGHT, DOWN, LEFT };
-
 Collider::Collider(Shape * body):
   body{body}
 { }
 
-std::pair<bool, float> Collider::is_colliding(Shape * other) {
+std::pair<bool, sf::Vector2f> Collider::is_colliding(Shape * other) {
   sf::Vector2f current_position = body -> body -> getPosition();
   sf::Vector2f current_half_size = body -> getSize() / (float) 2;
   sf::Vector2f other_position = other -> body -> getPosition();
@@ -20,12 +18,14 @@ std::pair<bool, float> Collider::is_colliding(Shape * other) {
 
   float intersect_x = abs(delta_x) - (current_half_size.x + other_half_size.x);
   float intersect_y = abs(delta_y) - (current_half_size.y + other_half_size.y);
+
+  bool is_colliding;
   
   if (intersect_x < (float) 0 && intersect_y < (float) 0) {
-    std::cout << "jup" << std::endl;
+    is_colliding = true;
   } else {
-    std::cout << "nope" << std::endl;
+    is_colliding = false;
   }
 
-  return std::pair<bool, intersect_angle>(true, UP);
+  return std::pair<bool, sf::Vector2f>(is_colliding, sf::Vector2f{intersect_x, intersect_y});
 }
