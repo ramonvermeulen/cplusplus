@@ -1,11 +1,16 @@
-IMPLEMENTATION_FILES := *.cpp
-OBJECT_FILES := *.o
+OBJS = ${wildcard *.o}
+HEADERS = ${wildcard *.hpp}
+SOURCES = ${wildcard *.cpp}
 
-main: ${OBJECT_FILES} # linking
-	g++ ${OBJECT_FILES} -o main -lsfml-graphics -lsfml-window -lsfml-system -std=c++17
+GXX := g++ -std=c++17
+LIBS := -lsfml-graphics -lsfml-window -lsfml-system
 
-main.o: ${IMPLEMENTATION_FILES} # compiling
-	g++ -c ${IMPLEMENTATION_FILES}
+# comment me out on first `make` run
+main: ${OBJS}
+	${GXX} -o main.exe ${OBJS} ${LIBS}
+
+main.o: ${HEADERS}
+	${GXX} -c ${SOURCES}
 
 clean:
-	rm *.o main
+	rm main.exe ${OBJS}
