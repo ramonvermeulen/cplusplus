@@ -1,0 +1,41 @@
+@startuml FactoryPattern
+
+
+class sf::Drawable {
+  ...
+}
+
+class DrawableObject {
+  # sf::Vector2f position
+  # sf::Color color
+  + virtual void draw()
+}
+
+class DrawableFactory {
+
+}
+
+class Circle {
+  - float radius
+}
+
+class Picture {
+
+}
+
+class Rectangle {
+
+}
+
+class Line {
+
+}
+
+sf::Drawable <|-- DrawableObject
+DrawableObject <|-- Circle
+DrawableObject <|-- Picture
+DrawableObject <|-- Rectangle
+DrawableObject <|-- Line
+
+
+@enduml

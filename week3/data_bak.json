@@ -1,0 +1,26 @@
+[
+  {
+    "type": "Rectangle",
+    "position": {
+      "x": 120.0,
+      "y": 540.0
+    },
+    "color": "#FFFFFF",
+    "second_position": {
+      "x": 150.0,
+      "y": 580.0
+    }
+  },
+  {
+    "type": "Rectangle",
+    "position": {
+      "x": 325.0,
+      "y": 859.0
+    },
+    "color": "#FFFFFF",
+    "second_position": {
+      "x": 465.0,
+      "y": 783.0
+    }
+  }
+]
