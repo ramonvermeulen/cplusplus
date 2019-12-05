@@ -1,27 +1,12 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
-#include <jsoncpp/json/json.h>
-
-#include <fstream>
-#include <algorithm>
-
 
 const int SCREEN_HEIGHT = 720;
 const int SCREEN_WIDTH = 1080;
 
 int main()
 {
-    sf::RenderWindow window{ sf::VideoMode{ SCREEN_WIDTH, SCREEN_HEIGHT }, "Factory", sf::Style::Titlebar | sf::Style::Close}; 
-    // std::vector<Drawable*> drawables; 
-
-    // std::ifstream stream("data.json");
-    // Json::Reader reader;
-    // Json::Value parsed_data;
-
-    // reader.parse(stream, parsed_data);
-
-    // std::for_each(parsed_data.begin(), parsed_data.end(), [](Json::Value & val) { std::cout << val << std::endl; });
-
+    sf::RenderWindow window{ sf::VideoMode{ SCREEN_WIDTH, SCREEN_HEIGHT }, "Factory", sf::Style::Titlebar | sf::Style::Close};
 
     while (window.isOpen()) {
         sf::Event event;
