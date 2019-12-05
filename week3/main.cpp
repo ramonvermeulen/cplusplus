@@ -11,15 +11,16 @@ const int SCREEN_WIDTH = 1080;
 
 int main()
 {
-    sf::RenderWindow window{ sf::VideoMode{ SCREEN_WIDTH, SCREEN_HEIGHT }, "Factory", sf::Style::Titlebar | sf::Style::Close};   
+    sf::RenderWindow window{ sf::VideoMode{ SCREEN_WIDTH, SCREEN_HEIGHT }, "Factory", sf::Style::Titlebar | sf::Style::Close}; 
+    // std::vector<Drawable*> drawables; 
 
-    std::ifstream stream("data.json");
-    Json::Reader reader;
-    Json::Value parsed_data;
+    // std::ifstream stream("data.json");
+    // Json::Reader reader;
+    // Json::Value parsed_data;
 
-    reader.parse(stream, parsed_data);
+    // reader.parse(stream, parsed_data);
 
-    std::for_each(parsed_data.begin(), parsed_data.end(), [](Json::Value & val) { std::cout << val << std::endl; });
+    // std::for_each(parsed_data.begin(), parsed_data.end(), [](Json::Value & val) { std::cout << val << std::endl; });
 
 
     while (window.isOpen()) {

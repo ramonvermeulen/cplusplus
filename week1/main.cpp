@@ -50,10 +50,7 @@ int main()
     screen_objects[2] = new Wall { sf::Vector2f{ SCREEN_WIDTH - WALL_SIZE / 2, SCREEN_HEIGHT / 2 }, WALL_SIZE, SCREEN_HEIGHT, sf::Color::Green }; // right wall
     screen_objects[3] = new Wall { sf::Vector2f{ SCREEN_WIDTH / 2, SCREEN_HEIGHT - WALL_SIZE / 2 }, SCREEN_WIDTH, WALL_SIZE, sf::Color::Green };
     screen_objects[4] = new Wall { sf::Vector2f{ WALL_SIZE / 2, SCREEN_HEIGHT / 2 }, WALL_SIZE, SCREEN_WIDTH, sf::Color::Green }; 
-    // screen_objects[5] = new Ball { sf::Vector2f{ 100, SCREEN_HEIGHT / 2 }, sf::Color::Yellow, 15.0, 90, 2 };
     screen_objects[5] = new Ball { sf::Vector2f{ 200, SCREEN_HEIGHT / 2 }, sf::Color::Blue, 35.0, 225, 5 };
-    // screen_objects[7] = new Ball { sf::Vector2f{ 300, SCREEN_HEIGHT / 2 }, sf::Color::Red, 20.0, 70, 5 };
-    // screen_objects[8] = new Ball { sf::Vector2f{ 400, SCREEN_HEIGHT / 2 }, sf::Color::Cyan, 10.0, 315, 8 };   
 
 
     while (window.isOpen()) {

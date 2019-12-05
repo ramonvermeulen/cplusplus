@@ -1,41 +1,54 @@
 @startuml FactoryPattern
 
-
-class sf::Drawable {
-  ...
-}
-
-class DrawableObject {
+class Drawable {
   # sf::Vector2f position
   # sf::Color color
+  + bool active
+  - void handleInput()
   + virtual void draw()
-}
-
-class DrawableFactory {
-
 }
 
 class Circle {
   - float radius
+  + void draw() override
 }
 
 class Picture {
-
+  + void draw() override
 }
 
 class Rectangle {
-
+  - sf::Vector2f size
+  + void draw() override
 }
 
 class Line {
-
+  - sf::Vector2f size
+  + void draw() override
 }
 
-sf::Drawable <|-- DrawableObject
-DrawableObject <|-- Circle
-DrawableObject <|-- Picture
-DrawableObject <|-- Rectangle
-DrawableObject <|-- Line
+class DrawableFactory {
+  ...
+  - DrawableFactory* instance
+  - Drawable* createDrawable
+  + static DrawableFactory* getInstance()
+}
 
+class DataProviderJson {
+  - string fileLocation
+  + ...<...> readAndParseData()
+  + void writeData()
+}
+
+class Main {
+  + int main()
+}
+
+Drawable <|-- Circle
+Drawable <|-- Picture
+Drawable <|-- Rectangle
+Drawable <|-- Line
+Main o-- DrawableFactory
+Main o-- DataProviderJson
 
 @enduml
