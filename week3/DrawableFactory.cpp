@@ -1,6 +1,7 @@
 #include "DrawableFactory.hpp"
 #include "Rectangle.hpp"
 #include "Drawable.hpp"
+#include <iostream>
 
 DrawableFactory* DrawableFactory::instance = 0;
 
