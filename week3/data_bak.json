@@ -6,56 +6,33 @@
       "x": 120.0,
       "y": 540.0
     },
-    "color": "#FFFFFF",
-    "second_position": {
+    "color": {
+      "r": 255,
+      "g": 0,
+      "b": 0
+    },
+    "size": {
       "x": 150.0,
-      "y": 580.0
-    }
+      "y": 100.0
+    },
+    "active": true
   },
   {
     "id": 2,
     "type": "Rectangle",
     "position": {
-      "x": 325.0,
-      "y": 859.0
+      "x": 500.0,
+      "y": 600.0
     },
-    "color": "#FF0000",
-    "second_position": {
-      "x": 465.0,
-      "y": 783.0
-    }
-  },
-  {
-    "id": 3,
-    "type": "Line",
-    "position": {
-      "x": 325.0,
-      "y": 859.0
+    "color": {
+      "r": 0,
+      "g": 255,
+      "b": 0
     },
-    "color": "#FF0000",
-    "second_position": {
-      "x": 465.0,
-      "y": 783.0
-    }
-  },
-  {
-    "id": 4,
-    "type": "Circle",
-    "position": {
-      "x": 325.0,
-      "y": 859.0
+    "size": {
+      "x": 75.0,
+      "y": 50.0
     },
-    "color": "#FFFFFF",
-    "Radius": 5
-  },
-  {
-    "id": 5,
-    "type": "Picture",
-    "position": {
-      "x": 325.0,
-      "y": 859.0
-    },
-    "color": "#FF0000",
-    "uri": "eend.png"
+    "active": false
   }
 ]

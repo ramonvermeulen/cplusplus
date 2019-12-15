@@ -5,14 +5,15 @@
 
 class Drawable {
   protected:
+    sf::Vector2f position;
     sf::Color color;
     bool active;
-    sf::Drawable* body;
-    void handleInput();
+    sf::Shape* body;
   public:
-    sf::Vector2f position;
     Drawable(const sf::Vector2f position, sf::Color color, bool active, sf::Shape * body);
     virtual void draw(sf::RenderWindow & window) = 0;
+    void handleInput();
+    void updateActive(sf::Vector2i mousePosition);
 };
 
 #endif

@@ -2,7 +2,7 @@
 #include <iostream>
 
 Rectangle::Rectangle(const sf::Vector2f position, sf::Color color, bool active, const sf::Vector2f size):
-  Drawable(position, color, active, new sf::RectangleShape),
+  Drawable(position, color, active, new sf::RectangleShape()),
   size{size}
 {
   static_cast<sf::RectangleShape*>(body) -> setOrigin(sf::Vector2f{size.x / 2, size.y / 2});
