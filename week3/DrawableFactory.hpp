@@ -6,8 +6,8 @@
 
 class DrawableFactory {
   private:
+    DrawableFactory() { }; /* private constructor to prevent instancing */
     static DrawableFactory* instance;
-    DrawableFactory(); /* private constructor to prevent instancing */
   public:
     static DrawableFactory* getInstance();
     Drawable* createDrawable(Json::Value& definition);

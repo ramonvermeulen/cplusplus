@@ -4,14 +4,15 @@
 #include <SFML/Graphics.hpp>
 
 class Drawable {
-  private:
+  protected:
     sf::Vector2f position;
     sf::Color color;
     bool active;
+    sf::Drawable* body;
     void handleInput();
   public:
-    Drawable(sf::Vector2f & position, sf::Color & color, bool active);
-    virtual void draw() = 0;
+    Drawable(const sf::Vector2f position, const sf::Color color, bool active, sf::Drawable * body);
+    virtual void draw(sf::RenderWindow & window) = 0;
 };
 
 #endif
