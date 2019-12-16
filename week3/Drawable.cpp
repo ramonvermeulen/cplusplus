@@ -1,9 +1,10 @@
 #include "Drawable.hpp"
 
-Drawable::Drawable(const sf::Vector2f position, sf::Color color, bool active, sf::Shape * body):
+Drawable::Drawable(const sf::Vector2f position, sf::Color color, bool active, float rotation, sf::Shape * body):
   position{position},
   color{color},
   active{active},
+  rotation{rotation},
   body{body}
 {
   body -> setFillColor(color);
@@ -22,6 +23,12 @@ void Drawable::handleInput() {
     }
     if(sf::Keyboard::isKeyPressed(sf::Keyboard::Down) && position.y < SCREEN_HEIGHT) {
       position.y += SPEED;               
+    }
+    if(sf::Keyboard::isKeyPressed(sf::Keyboard::R)) {
+      rotation -= SPEED;   
+    }
+    if(sf::Keyboard::isKeyPressed(sf::Keyboard::L)) {
+      rotation += SPEED;  
     }
   }
 }
@@ -45,6 +52,7 @@ Json::Value Drawable::getBaseJson() {
   drawable["color"]["g"] = color.g;
   drawable["color"]["b"] = color.b;
   drawable["active"] = active;
+  drawable["rotation"] = rotation;
   return drawable;
 }
 

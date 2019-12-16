@@ -9,9 +9,8 @@ class Line: public Drawable {
   private:
     float length;
     float thickness;
-    float rotation;
   public:
-    Line(const sf::Vector2f position, sf::Color color, bool active, float length, float thickness, float rotation);
+    Line(const sf::Vector2f position, sf::Color color, bool active, float rotation, float length, float thickness);
     static Drawable* fromJsonValue(Json::Value config);
     Json::Value toJsonValue() override;
     virtual void draw(sf::RenderWindow & window) override;

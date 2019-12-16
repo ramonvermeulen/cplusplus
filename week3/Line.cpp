@@ -1,10 +1,9 @@
 #include "Line.hpp"
 
-Line::Line(const sf::Vector2f position, sf::Color color, bool active, float length, float thickness, float rotation):
-  Drawable(position, color, active, new sf::RectangleShape),
+Line::Line(const sf::Vector2f position, sf::Color color, bool active, float rotation, float length, float thickness):
+  Drawable(position, color, active, rotation, new sf::RectangleShape),
   length{length},
-  thickness{thickness},
-  rotation{rotation}
+  thickness{thickness}
 {
   static_cast<sf::RectangleShape*>(body) -> setOrigin(sf::Vector2f{thickness / 2, length / 2});
   static_cast<sf::RectangleShape*>(body) -> setSize(sf::Vector2f{thickness, length});
@@ -23,9 +22,9 @@ Drawable* Line::fromJsonValue(Json::Value config) {
       config["color"]["b"].asInt()
     ),
     config["active"].asBool(),
+    config["rotation"].asFloat(),
     config["length"].asFloat(),
-    config["thickness"].asFloat(),
-    config["rotation"].asFloat()
+    config["thickness"].asFloat()
   );
 }
 
@@ -34,11 +33,11 @@ Json::Value Line::toJsonValue() {
   line["type"] = "Line";
   line["length"] = length;
   line["thickness"] = thickness;
-  line["rotation"] = rotation;
   return line;
 }
 
 void Line::draw(sf::RenderWindow & window) {
   static_cast<sf::RectangleShape*>(body) -> setPosition(position);
+  static_cast<sf::RectangleShape*>(body) -> setRotation(rotation);
   window.draw(*body);
 }

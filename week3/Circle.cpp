@@ -1,7 +1,7 @@
 #include "Circle.hpp"
 
-Circle::Circle(const sf::Vector2f position, sf::Color color, bool active, float radius):
-  Drawable(position, color, active, new sf::CircleShape),
+Circle::Circle(const sf::Vector2f position, sf::Color color, bool active, float rotation, float radius):
+  Drawable(position, color, active, rotation, new sf::CircleShape),
   radius{radius}
 {
   static_cast<sf::CircleShape*>(body) -> setRadius(radius);
@@ -20,6 +20,7 @@ Drawable* Circle::fromJsonValue(Json::Value config) {
       config["color"]["b"].asInt()
     ),
     config["active"].asBool(),
+    config["rotation"].asFloat(),
     config["radius"].asFloat()
   );
 }
@@ -33,5 +34,6 @@ Json::Value Circle::toJsonValue() {
 
 void Circle::draw(sf::RenderWindow & window) {
   static_cast<sf::RectangleShape*>(body) -> setPosition(position);
+  static_cast<sf::RectangleShape*>(body) -> setRotation(rotation);
   window.draw(*body);
 }

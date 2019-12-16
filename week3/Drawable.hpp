@@ -10,9 +10,10 @@ class Drawable {
     sf::Vector2f position;
     sf::Color color;
     bool active;
+    float rotation;
     sf::Shape* body;
   public:
-    Drawable(const sf::Vector2f position, sf::Color color, bool active, sf::Shape * body);
+    Drawable(const sf::Vector2f position, sf::Color color, bool active, float rotation, sf::Shape * body);
     virtual void draw(sf::RenderWindow & window) = 0;
     virtual Json::Value toJsonValue() = 0;
     Json::Value getBaseJson();
