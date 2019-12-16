@@ -8,9 +8,7 @@
 
 #include "Drawable.hpp"
 #include "Rectangle.hpp"
-
-const int SCREEN_HEIGHT = 720;
-const int SCREEN_WIDTH = 1080;
+#include "Constants.hpp"
 
 int main()
 {
@@ -45,7 +43,11 @@ int main()
         
     while (window.pollEvent(event)) {
       if (event.type == sf::Event::Closed) {
-        std::cout << "Close and save objects handling" << std::endl;
+        Json::Value root;
+        std::for_each(drawables.begin(), drawables.end(), [&root](Drawable* drawable) {
+          root.append(drawable -> toJsonValue());
+        });
+        dataProvider -> writeData(root);
         window.close();
       }
     }

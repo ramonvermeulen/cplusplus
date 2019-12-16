@@ -28,4 +28,12 @@ Json::Value DataProviderJson::readAndParseData() {
     std::cout << "Some other kind of Exception throwed in the DataProviderJson::read_and_parse_data() method" << std::endl;
     throw e;
   }
-};
+}
+
+void DataProviderJson::writeData(Json::Value & data) {
+  std::ofstream file;
+  file.open(filePath);
+  Json::StyledWriter writer;
+  file << writer.write(data);
+  file.close();
+}

@@ -1,8 +1,10 @@
 #ifndef _DRAWABLE_FACTORY_HPP
 #define _DRAWABLE_FACTORY_HPP
 
-#include <jsoncpp/json/json.h>
 #include "Drawable.hpp"
+#include "Rectangle.hpp"
+#include "Line.hpp"
+#include "Circle.hpp"
 
 class DrawableFactory {
   private:

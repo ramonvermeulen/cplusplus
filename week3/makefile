@@ -20,7 +20,7 @@ CC=g++
 CFLAGS=-c -Wall -std=c++11 
 LDFLAGS=
 LIBFLAGS=-lsfml-graphics -lsfml-window -lsfml-system -ljsoncpp
-SOURCES=main.cpp DataProviderJson.cpp Drawable.cpp DrawableFactory.cpp Rectangle.cpp
+SOURCES=main.cpp DataProviderJson.cpp Drawable.cpp DrawableFactory.cpp Rectangle.cpp Line.cpp Circle.cpp Constants.cpp
 OBJECTS=$(SOURCES:.cpp=.o)
 EXECUTABLE=main.exe
 BINDIR=/usr/bin

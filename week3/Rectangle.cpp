@@ -32,3 +32,11 @@ Drawable* Rectangle::fromJsonValue(Json::Value config) {
     )
   );
 }
+
+Json::Value Rectangle::toJsonValue() {
+  Json::Value rectangle = Drawable::getBaseJson();
+  rectangle["type"] = "Rectangle";
+  rectangle["size"]["x"] = size.x;
+  rectangle["size"]["y"] = size.y;
+  return rectangle;
+}
