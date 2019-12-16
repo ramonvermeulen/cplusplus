@@ -31,10 +31,11 @@ void Drawable::handleInput() {
 void Drawable::updateActive(sf::Vector2i mousePosition) {
   if(body -> getGlobalBounds().contains(mousePosition.x, mousePosition.y)) {
     active = true;
-    body -> setFillColor(sf::Color::White);
+    body -> setOutlineThickness(5);
   } else {
     active = false;
     body -> setFillColor(color);
+    body -> setOutlineThickness(0);
   }
 }
 
