@@ -1,26 +1,16 @@
-# OBJS = ${wildcard *.o}
-# HEADERS = ${wildcard *.hpp}
-# SOURCES = ${wildcard *.cpp}
-
-# GXX := g++ -std=c++17
-# LIBS := -lsfml-graphics -lsfml-window -lsfml-system -ljsoncpp
-
-# # comment me out on first `make` run
-# main: ${OBJS}
-# 	${GXX} -o main.exe ${OBJS} ${LIBS}
-
-# main.o: ${HEADERS}
-# 	${GXX} -c ${SOURCES}
-
-# clean:
-# 	rm main.exe ${OBJS}
-
-
 CC=g++
-CFLAGS=-c -Wall -std=c++11 
+CFLAGS=-c -Wall -std=c++17
 LDFLAGS=
 LIBFLAGS=-lsfml-graphics -lsfml-window -lsfml-system -ljsoncpp
-SOURCES=main.cpp DataProviderJson.cpp Drawable.cpp DrawableFactory.cpp Rectangle.cpp Line.cpp Circle.cpp Constants.cpp
+SOURCES=main.cpp \
+        DataProviderJson.cpp \
+				Drawable.cpp \
+				DrawableFactory.cpp \
+				Rectangle.cpp \
+				Line.cpp \
+				Circle.cpp \
+				Constants.cpp \
+				Image.cpp
 OBJECTS=$(SOURCES:.cpp=.o)
 EXECUTABLE=main.exe
 BINDIR=/usr/bin

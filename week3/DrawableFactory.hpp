@@ -5,6 +5,8 @@
 #include "Rectangle.hpp"
 #include "Line.hpp"
 #include "Circle.hpp"
+#include "Image.hpp"
+#include <iostream>
 
 class DrawableFactory {
   private:

@@ -1,32 +1,46 @@
 #include "DataProviderJson.hpp"
 
 #include "jsoncpp/json/json.h"
-#include "fstream"
-#include "iostream"
-
+#include <fstream>
+#include <iostream>
+#include <exception>
 
 DataProviderJson::DataProviderJson(const std::string & filePath):
   filePath{filePath},
   data{new Json::Value}
 { }
 
+struct FileNotFound : public std::exception {
+  const char * what() const throw() {
+    return "File not found exception";
+  }
+};
+
+
 Json::Value DataProviderJson::readAndParseData() {
   try {
     std::ifstream stream(filePath);
+    if(stream.fail()) {
+      throw FileNotFound();
+    }
     Json::Reader reader;
     reader.parse(stream, data);
     return data;
+  } catch (FileNotFound & e) {
+    std::cout << e.what() << std::endl;
+    throw;
   } catch (Json::LogicError & e) {
-    throw e;
+    std::cout << e.what() << std::endl;
+    throw;
   } catch (Json::RuntimeError & e) {
-    throw e;
+    std::cout << e.what() << std::endl;
+    throw;
   } catch (std::ifstream::failure & e) {
-    std::cout << "An Exception throwed during reading your json file" << std::endl;
-    throw e;
+    std::cout << e.what() << std::endl;
+    throw;
   } catch (std::exception & e) {
-    /* Implement error handling for different specific type of errors */
-    std::cout << "Some other kind of Exception throwed in the DataProviderJson::read_and_parse_data() method" << std::endl;
-    throw e;
+    std::cout << e.what() << std::endl;
+    throw;
   }
 }
 

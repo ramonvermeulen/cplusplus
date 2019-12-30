@@ -1,9 +1,7 @@
 #ifndef _CIRCLE_HPP
 #define _CIRCLE_HPP
 
-#include <SFML/Graphics.hpp>
 #include "Drawable.hpp"
-#include "jsoncpp/json/json.h"
 
 class Circle: public Drawable {
   private:

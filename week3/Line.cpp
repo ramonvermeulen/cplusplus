@@ -30,7 +30,7 @@ Drawable* Line::fromJsonValue(Json::Value config) {
 
 Json::Value Line::toJsonValue() {
   Json::Value line = Drawable::getBaseJson();
-  line["type"] = "Line";
+  line["type"] = LINE_TYPE;
   line["length"] = length;
   line["thickness"] = thickness;
   return line;

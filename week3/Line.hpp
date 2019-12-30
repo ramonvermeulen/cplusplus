@@ -1,9 +1,7 @@
 #ifndef _LINE_HPP
 #define _LINE_HPP
 
-#include <SFML/Graphics.hpp>
 #include "Drawable.hpp"
-#include "jsoncpp/json/json.h"
 
 class Line: public Drawable {
   private:

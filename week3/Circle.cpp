@@ -27,7 +27,7 @@ Drawable* Circle::fromJsonValue(Json::Value config) {
 
 Json::Value Circle::toJsonValue() {
   Json::Value circle = Drawable::getBaseJson();
-  circle["type"] = "Circle";
+  circle["type"] = CIRCLE_TYPE;
   circle["radius"] = radius;
   return circle;
 }

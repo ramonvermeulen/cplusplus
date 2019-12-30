@@ -1,87 +1,120 @@
 [
   {
-    "id": 1,
-    "type": "Rectangle",
-    "position": {
-      "x": 120.0,
-      "y": 540.0
-    },
-    "color": {
-      "r": 255,
-      "g": 0,
-      "b": 0
-    },
-    "size": {
-      "x": 150.0,
-      "y": 100.0
-    },
-    "active": true
+     "active" : false,
+     "color" : {
+        "b" : 0,
+        "g" : 0,
+        "r" : 255
+     },
+     "position" : {
+        "x" : 190,
+        "y" : 287.5
+     },
+     "rotation" : 577.5,
+     "size" : {
+        "x" : 150,
+        "y" : 100
+     },
+     "type" : "Rectangle"
   },
   {
-    "id": 2,
-    "type": "Rectangle",
-    "position": {
-      "x": 500.0,
-      "y": 600.0
-    },
-    "color": {
-      "r": 0,
-      "g": 255,
-      "b": 0
-    },
-    "size": {
-      "x": 75.0,
-      "y": 50.0
-    },
-    "active": false
+     "active" : false,
+     "color" : {
+        "b" : 0,
+        "g" : 255,
+        "r" : 0
+     },
+     "position" : {
+        "x" : 607.5,
+        "y" : 457.5
+     },
+     "rotation" : -205,
+     "size" : {
+        "x" : 75,
+        "y" : 50
+     },
+     "type" : "Rectangle"
   },
   {
-    "id": 3,
-    "type": "Line",
-    "position": {
-      "x": 450.0,
-      "y": 100.0
-    },
-    "color": {
-      "r": 0,
-      "g": 0,
-      "b": 255
-    },
-    "length": 100.0,
-    "thickness": 5.0,
-    "rotation": 45.0,
-    "active": false
+     "active" : false,
+     "color" : {
+        "b" : 255,
+        "g" : 0,
+        "r" : 0
+     },
+     "length" : 100,
+     "position" : {
+        "x" : 337.5,
+        "y" : 422.5
+     },
+     "rotation" : 45,
+     "thickness" : 5,
+     "type" : "Line"
   },
   {
-    "id": 4,
-    "type": "Line",
-    "position": {
-      "x": 100.0,
-      "y": 100.0
-    },
-    "color": {
-      "r": 0,
-      "g": 255,
-      "b": 255
-    },
-    "length": 100.0,
-    "thickness": 2.0,
-    "rotation": 123.0,
-    "active": false
+     "active" : false,
+     "color" : {
+        "b" : 255,
+        "g" : 255,
+        "r" : 0
+     },
+     "length" : 100,
+     "position" : {
+        "x" : 320,
+        "y" : 282.5
+     },
+     "rotation" : 15.5,
+     "thickness" : 2,
+     "type" : "Line"
   },
   {
-    "id": 5,
-    "type": "Circle",
-    "position": {
-      "x": 300.0,
-      "y": 100.0
-    },
-    "color": {
-      "r": 255,
-      "g": 0,
-      "b": 255
-    },
-    "radius": 30.0,
-    "active": false
+     "active" : false,
+     "color" : {
+        "b" : 200,
+        "g" : 50,
+        "r" : 25
+     },
+     "length" : 300,
+     "position" : {
+        "x" : 905,
+        "y" : 275
+     },
+     "rotation" : -2972.5,
+     "thickness" : 3,
+     "type" : "Line"
+  },
+  {
+     "active" : false,
+     "color" : {
+        "b" : 255,
+        "g" : 0,
+        "r" : 255
+     },
+     "position" : {
+        "x" : 640,
+        "y" : 280
+     },
+     "radius" : 30,
+     "rotation" : 0,
+     "type" : "Circle"
+  },
+  {
+     "active" : false,
+     "color" : {
+        "b" : 200,
+        "g" : 200,
+        "r" : 200
+     },
+     "imagePath" : "eend.png",
+     "position" : {
+        "x" : 850,
+        "y" : 478
+     },
+     "rotation" : 0,
+     "size" : {
+        "x" : 150,
+        "y" : 150
+     },
+     "type" : "Image"
   }
 ]

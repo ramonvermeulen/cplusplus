@@ -13,22 +13,22 @@ Drawable::Drawable(const sf::Vector2f position, sf::Color color, bool active, fl
 void Drawable::handleInput() {
   if (active) {
     if(sf::Keyboard::isKeyPressed(sf::Keyboard::Left) && position.x > 0) {
-      position.x -= SPEED;
+      position.x -= DRAWABLE_SPEED;
     }
     if(sf::Keyboard::isKeyPressed(sf::Keyboard::Right) && position.x < SCREEN_WIDTH) {
-      position.x += SPEED;
+      position.x += DRAWABLE_SPEED;
     }
     if(sf::Keyboard::isKeyPressed(sf::Keyboard::Up) && position.y > 0) {
-      position.y -= SPEED;
+      position.y -= DRAWABLE_SPEED;
     }
     if(sf::Keyboard::isKeyPressed(sf::Keyboard::Down) && position.y < SCREEN_HEIGHT) {
-      position.y += SPEED;               
+      position.y += DRAWABLE_SPEED;               
     }
     if(sf::Keyboard::isKeyPressed(sf::Keyboard::R)) {
-      rotation -= SPEED;   
+      rotation -= DRAWABLE_SPEED;   
     }
     if(sf::Keyboard::isKeyPressed(sf::Keyboard::L)) {
-      rotation += SPEED;  
+      rotation += DRAWABLE_SPEED;  
     }
   }
 }

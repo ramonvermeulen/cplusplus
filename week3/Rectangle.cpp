@@ -1,5 +1,4 @@
 #include "Rectangle.hpp"
-#include <iostream>
 
 Rectangle::Rectangle(const sf::Vector2f position, sf::Color color, bool active, float rotation, const sf::Vector2f size):
   Drawable(position, color, active, rotation, new sf::RectangleShape()),
@@ -38,7 +37,7 @@ Drawable* Rectangle::fromJsonValue(Json::Value config) {
 
 Json::Value Rectangle::toJsonValue() {
   Json::Value rectangle = Drawable::getBaseJson();
-  rectangle["type"] = "Rectangle";
+  rectangle["type"] = RECTANGLE_TYPE;
   rectangle["size"]["x"] = size.x;
   rectangle["size"]["y"] = size.y;
   return rectangle;

@@ -1,9 +1,7 @@
 #ifndef _RECTANGLE_HPP
 #define _RECTANGLE_HPP
 
-#include <SFML/Graphics.hpp>
 #include "Drawable.hpp"
-#include "jsoncpp/json/json.h"
 
 class Rectangle: public Drawable {
   private:

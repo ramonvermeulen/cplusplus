@@ -3,6 +3,7 @@
 
 #include <SFML/Graphics.hpp>
 #include <jsoncpp/json/json.h>
+#include <iostream>
 #include "Constants.hpp"
 
 class Drawable {
