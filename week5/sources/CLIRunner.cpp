@@ -21,10 +21,30 @@ void CLIRunner::start() {
     currentState = currentGame.checkGameState();
   }
   if (currentState == GameState::Draw) {
-    std::cout << "DRAW!!! You are both to smart for this game." << std::endl;
+    std::cout << "     _                    " << std::endl;
+    std::cout << "    | |                   " << std::endl;
+    std::cout << "  __| |_ __ __ ___      __" << std::endl;
+    std::cout << " / _` | '__/ _` \\ \\ /\\ / /" << std::endl;
+    std::cout << "| (_| | | | (_| |\\ V  V / " << std::endl;
+    std::cout << " \\__,_|_|  \\__,_| \\_/\\_/  " << std::endl;
+    std::cout << std::endl;
+    std::cout << "DRAW!!! You are both too smart for this game." << std::endl;
+    std::cout << std::endl << std::endl;
   }
   if (currentState == GameState::Win) {
+    std::cout << "             ___________" << std::endl;
+    std::cout << "            '._==_==_=_.'" << std::endl;
+    std::cout << "            .-\\:      /-." << std::endl;
+    std::cout << "           | (|:.     |) |" << std::endl;
+    std::cout << "            '-|:.     |-'" << std::endl;
+    std::cout << "              \\::.    /" << std::endl;
+    std::cout << "               '::. .'" << std::endl;
+    std::cout << "                 ) (" << std::endl;
+    std::cout << "               _.' '._" << std::endl;
+    std::cout << "              `\"\"\"\"\"\"\"`" << std::endl;
+    std::cout << std::endl;
     std::cout << "WINNER!!! Congratulations player " << currentGame.getNextPlayer() << "!" << std::endl;
+    std::cout << std::endl << std::endl;
   }
 }
 
@@ -49,10 +69,16 @@ void CLIRunner::playRound() {
 void CLIRunner::printBoard() {
   int c = 0;
   std::cout << std::endl;
+  std::cout << std::endl;
+  std::cout << "|||||||||||" << std::endl;
   for (int i = 0; i < MAX; i++) {
-    std::cout << currentGame.getBoard()[i];
-    if (c % 3 == 2) std::cout << std::endl;
+    if (c % 3 == 0) std::cout << "|";
+    std::cout << "|" << currentGame.getBoard()[i] << "|";
+    if (c % 3 == 2) std::cout << "|" << std::endl;
     c++;
   }
+  std::cout << "|||||||||||" << std::endl;
   std::cout << std::endl;
+  std::cout << std::endl;
+
 }
