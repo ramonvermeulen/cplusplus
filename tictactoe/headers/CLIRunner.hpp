@@ -5,19 +5,20 @@
 #include "CManager.hpp"
 #include "Constants.hpp"
 
-class GameRunner {
+class CLIRunner {
   private:
     Game currentGame;
     CManager cManager;
     void undoLastCommandIfAvailable();
   public:
-    GameRunner();
+    CLIRunner();
     void start();
     void setGame(Game game) {
       currentGame = game;
     }
     void playRound();
     void printBoard();
+    
 };
 
 

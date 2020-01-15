@@ -4,11 +4,10 @@ LDFLAGS=
 LIBFLAGS=-lsfml-graphics -lsfml-window -lsfml-system
 SOURCES=./sources/main.cpp \
 				./sources/Game.cpp \
-				./sources/GameRunner.cpp \
-				./sources/CManager.cpp 
-        # Command.cpp \
-				# CommandManager.cpp \
-				# MakePlay.cpp
+				./sources/CLIRunner.cpp \
+				./sources/CManager.cpp \
+				./sources/GUIMenu.cpp \
+				./sources/GUIRunner.cpp 
 OBJECTS=$(SOURCES:.cpp=.o)
 EXECUTABLE=main.exe
 BINDIR=/usr/bin

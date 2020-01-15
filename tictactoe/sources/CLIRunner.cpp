@@ -1,10 +1,10 @@
-#include "../headers/GameRunner.hpp"
+#include "../headers/CLIRunner.hpp"
 
-GameRunner::GameRunner() {
+CLIRunner::CLIRunner() {
 
 }
 
-void GameRunner::undoLastCommandIfAvailable() {
+void CLIRunner::undoLastCommandIfAvailable() {
   Game undoGame;
   if(!cManager.undo(undoGame)) {
     std::cout << "No more commands to undo!" << std::endl;
@@ -13,7 +13,7 @@ void GameRunner::undoLastCommandIfAvailable() {
   setGame(undoGame);
 }
 
-void GameRunner::start() {
+void CLIRunner::start() {
   GameState currentState = currentGame.checkGameState();
   while(currentState == GameState::Playing) {
     playRound();
@@ -28,7 +28,7 @@ void GameRunner::start() {
   }
 }
 
-void GameRunner::playRound() {
+void CLIRunner::playRound() {
   int positionToPlay;
   std::cout << "It is player " << currentGame.getCurrentPlayer() << " it's turn." << std::endl;
   std::cout << "Please pick a board position number between [1-9] to play or 0 revert" << std::endl;
@@ -46,7 +46,7 @@ void GameRunner::playRound() {
   setGame(cManager.makePlay(currentGame, positionToPlay - 1));
 }
 
-void GameRunner::printBoard() {
+void CLIRunner::printBoard() {
   int c = 0;
   std::cout << std::endl;
   for (int i = 0; i < MAX; i++) {

@@ -1,7 +1,6 @@
-#include "Menu.hpp"
-#include <iostream>
+#include "../headers/GUIMenu.hpp"
 
-Menu::Menu() {
+GUIMenu::GUIMenu() {
   if(!font.loadFromFile("./assets/fonts/samantha.ttf")) {
     /* handle error */
   }
@@ -30,13 +29,13 @@ Menu::Menu() {
     menuOptions[2].setOrigin(textRect.left + textRect.width / 2, textRect.top + textRect.height / 2);
 }
 
-void Menu::draw(sf::RenderWindow & window) {
+void GUIMenu::draw(sf::RenderWindow & window) {
   for (int i = 0; i < MAX_NUMBER_OF_MENU_ITEMS; i++) {
     window.draw(menuOptions[i]);
   }
 }
 
-void Menu::moveUp() {
+void GUIMenu::moveUp() {
   if(selectedItemIndex - 1 >= 0) {
     menuOptions[selectedItemIndex].setFillColor(FONT_COLOR);
     selectedItemIndex--;
@@ -44,7 +43,7 @@ void Menu::moveUp() {
   }
 }
 
-void Menu::moveDown() {
+void GUIMenu::moveDown() {
   if(selectedItemIndex + 1 < MAX_NUMBER_OF_MENU_ITEMS) {
     menuOptions[selectedItemIndex].setFillColor(FONT_COLOR);
     selectedItemIndex++;
