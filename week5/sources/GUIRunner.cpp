@@ -29,11 +29,11 @@ void GUIRunner::start() {
 
     GameState currentState = currentGame.checkGameState();
 
-    if (currentState == GameState::Win) {
+    if (currentState == GameState::Draw) {
       std::cout << std::endl;
       std::cout << "DRAW!!! You are both too smart for this game." << std::endl;
       break;
-    } else if (currentState == GameState::Draw) {
+    } else if (currentState == GameState::Win) {
       std::cout << std::endl;
       std::cout << "WINNER!!! Congratulations player " << currentGame.getNextPlayer() << "!" << std::endl;
       break;
