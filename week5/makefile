@@ -6,7 +6,6 @@ SOURCES=./sources/main.cpp \
 				./sources/Game.cpp \
 				./sources/CLIRunner.cpp \
 				./sources/CManager.cpp \
-				./sources/GUIMenu.cpp \
 				./sources/GUIRunner.cpp 
 OBJECTS=$(SOURCES:.cpp=.o)
 EXECUTABLE=main.exe

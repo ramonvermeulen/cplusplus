@@ -11,7 +11,7 @@ class CManager {
     std::stack<Command *> commands;
     Game processCommand(Command *command, Game &game);
   public:
-    CManager();
+    CManager() {};
     Game makePlay(Game &game, int position);
     bool undo(Game &game);
 };

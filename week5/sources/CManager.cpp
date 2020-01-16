@@ -1,9 +1,5 @@
 #include "../headers/CManager.hpp"
 
-CManager::CManager() {
-  
-}
-
 Game CManager::processCommand(Command *command, Game &game) {
   command->setGame(game);
   command->execute();
